@@ -1,0 +1,50 @@
+/*
+Theme Name: Rajon Dey Music
+Theme URI: http://example.com/rajon-dey-music-theme/
+Author: Your Name
+Author URI: http://example.com
+Description: A custom WordPress theme for Rajon Dey's music portfolio.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rajon-dey-music
+*/
+
+:root {
+    --color-primary: #1DB954;
+    --color-secondary: #191414;
+    --color-accent: #FFFFFF;
+    --color-tertiary: #A9A9A9;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--color-secondary);
+    background-color: var(--color-accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.accent-font {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1aa34a;
+}
+
+/* Add more custom styles as needed */
+
