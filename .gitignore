@@ -1,0 +1,72 @@
+# WordPress core files
+wp-admin/
+wp-includes/
+
+# Configuration file
+wp-config.php
+
+# Uploads directory
+wp-content/uploads/
+
+# Upgrade files
+wp-content/upgrade/
+
+# Cache directories
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# Backup files
+wp-content/backups/
+
+# Log files
+*.log
+
+# htaccess
+.htaccess
+
+# All plugins
+# Uncomment if you want to exclude all plugins
+# wp-content/plugins/
+
+# All themes
+# Uncomment if you want to exclude all themes
+# wp-content/themes/
+
+# Specific plugins (examples)
+wp-content/plugins/hello.php
+
+# Specific themes (examples)
+wp-content/themes/twenty*/
+
+# Node modules
+node_modules/
+
+# Compiled CSS
+*.min.css
+
+# Compiled JavaScript
+*.min.js
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Local development files
+local-config.php
