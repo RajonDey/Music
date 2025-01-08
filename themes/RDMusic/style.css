@@ -11,40 +11,126 @@ Text Domain: rajon-dey-music
 */
 
 :root {
-    --color-primary: #1DB954;
-    --color-secondary: #191414;
-    --color-accent: #FFFFFF;
-    --color-tertiary: #A9A9A9;
+  --color-primary: #1db954;
+  --color-secondary: #191414;
+  --color-accent: #ffffff;
+  --color-tertiary: #a9a9a9;
 }
-
+html,
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: var(--color-secondary);
-    background-color: var(--color-accent);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  background-color: var(--color-accent);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 .accent-font {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .btn {
-    background-color: var(--color-primary);
-    color: var(--color-accent);
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #1aa34a;
+  background-color: #1aa34a;
 }
 
 /* Add more custom styles as needed */
-
+#page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#content {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 20, 20, 0.7); /* Using --color-secondary with opacity */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-accent);
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+}
+.portfolio-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.portfolio-links a {
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: 2px solid var(--color-accent);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.portfolio-links a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  border-color: var(--color-primary);
+}
+#site-footer {
+  background: transparent;
+  color: var(--color-accent);
+  z-index: 10;
+}
+#site-footer a {
+  color: var(--color-primary);
+}
+header {
+  position: absolute;
+  z-index: 9;
+  color: #fff;
+  top: 20%;
+  left: 50px;
+}
