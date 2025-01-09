@@ -21,6 +21,6 @@
 <body <?php body_class(); ?>>
 <header>
     <div class="logo">
-        <h2>RD Beats</h2>
+        <a href="/"><h2>RD Beats</h2></a>
     </div>
 </header>

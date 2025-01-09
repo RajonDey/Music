@@ -182,8 +182,7 @@ header {
   left: 0;
   width: 100%;
   text-align: center;
-  padding: 20px 0; /* Adjusted padding */
-  background: rgba(25, 20, 20, 0.7);
+  padding: 20px 0;
   color: var(--color-accent);
   font-size: 12px;
 }
@@ -200,7 +199,7 @@ header {
 /* Center Content */
 .center-content {
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -234,6 +233,8 @@ header {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
   width: 250px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
 }
 
 .newsletter-form button {
@@ -249,8 +250,15 @@ header {
 }
 
 .newsletter-form button:hover {
-  background: linear-gradient(90deg, #1db954, #1aa34a);
+  background: var(--color-secondary);
   transform: scale(1.05);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  box-shadow: 0 0 0 2px var(--color-primary);
 }
 
 /* Dynamic Tagline */
