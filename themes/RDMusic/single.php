@@ -1,5 +1,5 @@
 <?php
-/* Home.php */
+/* Single Blog Post Template */
 get_header();
 ?>
 
@@ -16,22 +16,29 @@ get_header();
 
             <!-- Center Content -->
             <div class="center-content">
-                <?php echo get_template_part( './template-parts/header-section', 'part' ); ?>
+                <?php echo get_template_part( './template-parts/header-section', 'part' ); ?> 
                 
-                <!-- Blog Posts Listing -->
-                <div class="blog-posts">
+                <!-- Blog Post Details -->
+                <div class="blog-posts single-post-box">
                     <?php
                     if (have_posts()) :
                         while (have_posts()) : the_post();
                             ?>
-                            <div class="post-summary">
-                                <h2><a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a></h2>
+                            <div class="post-content">
+                                <h1><?php the_title(); ?></h1>
+                                <div class="post-meta">
+                                    <span class="post-date"><?php the_date(); ?></span>
+                                    <span class="post-author">By <?php the_author(); ?></span>
+                                </div>
+                                <div class="post-body">
+                                    <?php the_content(); ?>
+                                </div>
                             </div>
                             <?php
                         endwhile;
                     else :
                         ?>
-                        <p>No posts found.</p>
+                        <p>No post found.</p>
                     <?php endif; ?>
                 </div>
 

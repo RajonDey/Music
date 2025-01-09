@@ -1,8 +1,8 @@
 /*
 Theme Name: Rajon Dey Music
-Theme URI: http://example.com/rajon-dey-music-theme/
+Theme URI: https://music.rajondey.com/wp-admin/themes.php?theme=RDMusic
 Author: Your Name
-Author URI: http://example.com
+Author URI: https://music.rajondey.com
 Description: A custom WordPress theme for Rajon Dey's music portfolio.
 Version: 1.0
 License: GNU General Public License v2 or later
@@ -16,6 +16,7 @@ Text Domain: rajon-dey-music
   --color-accent: #ffffff;
   --color-tertiary: #a9a9a9;
 }
+
 html,
 body {
   height: 100%;
@@ -23,6 +24,7 @@ body {
   padding: 0;
   overflow: hidden;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.6;
@@ -39,35 +41,39 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
-
-.accent-font {
-  font-family: "Montserrat", sans-serif;
+h1,
+h2 {
+  letter-spacing: 0.5px;
+  font-weight: 700;
 }
 
-.btn {
-  background-color: var(--color-primary);
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
   color: var(--color-accent);
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  z-index: 9;
+  width: 100%;
 }
-
-.btn:hover {
-  background-color: #1aa34a;
-}
-
-/* Add more custom styles as needed */
 #page {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 #content {
   flex-grow: 1;
   position: relative;
   overflow: hidden;
 }
+
 #myVideo {
   position: absolute;
   right: 0;
@@ -79,6 +85,7 @@ h6 {
   z-index: -100;
   background-size: cover;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -92,45 +99,309 @@ h6 {
   align-items: center;
   color: var(--color-accent);
 }
-h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: 3em;
-  margin-bottom: 20px;
-  color: var(--color-accent);
-}
-.portfolio-links {
+
+/* Social Media Links (Left Side) */
+.social-links {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
 }
-.portfolio-links a {
-  font-family: "Open Sans", sans-serif;
+
+.social-link {
+  color: var(--color-accent);
+  font-size: 24px;
+  transition: all 0.3s ease;
+  animation: float 3s infinite ease-in-out;
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+  transform: translateY(-5px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Menu (Bottom Center) */
+.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.main-menu a {
   color: var(--color-accent);
   text-decoration: none;
-  font-size: 1.2em;
-  padding: 10px 20px;
-  border: 2px solid var(--color-accent);
-  border-radius: 9999px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
   transition: all 0.3s ease;
+  position: relative;
 }
-.portfolio-links a:hover {
-  background-color: var(--color-primary);
-  color: var(--color-accent);
-  border-color: var(--color-primary);
-}
-#site-footer {
-  background: transparent;
-  color: var(--color-accent);
-  z-index: 10;
-}
-#site-footer a {
+
+.main-menu a.active {
   color: var(--color-primary);
 }
-header {
+.current-menu-item a {
+  color: var(--color-primary);
+}
+
+.main-menu a::after {
+  content: "";
   position: absolute;
-  z-index: 9;
-  color: #fff;
-  top: 20%;
-  left: 50px;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.main-menu a:hover::after {
+  width: 100%;
+}
+
+/* Footer */
+#site-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0; /* Adjusted padding */
+  background: rgba(25, 20, 20, 0.7);
+  color: var(--color-accent);
+  font-size: 12px;
+}
+
+#site-footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+#site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Center Content */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-accent);
+}
+
+.center-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3em;
+  line-height: 1em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.center-content p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  width: 250px;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  border: none;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(90deg, #1db954, #1aa34a);
+  transform: scale(1.05);
+}
+
+/* Dynamic Tagline */
+#dynamic-tagline {
+  animation: fade 6s infinite;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Legal Links */
+.legal-links {
+  margin-top: 10px;
+}
+
+.legal-links a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 5px;
+}
+
+.legal-links a:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    left: 10px;
+    gap: 10px;
+  }
+  .center-content h1 {
+    font-size: 2em;
+  }
+}
+
+/*
+Blog 
+-----------
+*/
+/* Style for the blog post listing */
+.blog-posts {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.post-summary {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.post-summary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.post-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.post-title:hover {
+  color: var(--color-primary);
+}
+
+/* Style for single blog post */
+.single-post-box {
+  text-align: left;
+  padding: 30px;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Darker, slightly transparent background for the post content */
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f0f0f0; /* Lighter text */
+}
+
+.single-post h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--color-accent); /* Light text for the main post title */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.single-post .post-meta {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7); /* Lighter gray text for meta info */
+  margin-bottom: 20px;
+}
+
+.single-post .post-meta span {
+  margin-right: 20px;
+}
+
+.single-post .post-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9); /* Slightly lighter text */
+}
+
+.single-post .post-body a {
+  color: var(--color-primary); /* Color for links */
+  text-decoration: none;
+}
+
+.single-post .post-body a:hover {
+  color: #1aa34a; /* A green accent when hovering over links */
+  text-decoration: underline;
+}
+
+/* Scrollbar styling */
+.blog-posts::-webkit-scrollbar {
+  width: 8px;
+}
+
+.blog-posts::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.blog-posts::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.blog-posts::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
 }

@@ -2,43 +2,25 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
+    <title><?php wp_title('|', true, 'right'); ?> Rajon Dey Music</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rajon Dey Music - RD Beats, Feel the Sound. Explore the music journey of Rajon Dey, blending code and melody.">
+    <meta name="keywords" content="Rajon Dey Music, RD Beats, Feel the Sound, Rajon, Rajon Dey">
+
+    <meta property="og:title" content="Rajon Dey Music - Feel the Sound" />
+    <meta property="og:description" content="Explore Rajon Dey's musical journey through captivating guitar melodies for creativity and soul healing." />
+
+    <link rel="canonical" href="<?php echo home_url(); ?>" />
     <?php wp_head(); ?>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
 </head>
 <body <?php body_class(); ?>>
-<header id="masthead" class="site-header sticky top-0 bg-white shadow-md z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="site-branding">
-            <?php
-            the_custom_logo();
-            if ( is_front_page() && is_home() ) :
-                ?>
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php
-            else :
-                ?>
-                <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                <?php
-            endif;
-            $rajon_dey_music_description = get_bloginfo( 'description', 'display' );
-            if ( $rajon_dey_music_description || is_customize_preview() ) :
-                ?>
-                <p class="site-description"><?php echo $rajon_dey_music_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-            <?php endif; ?>
-        </div>
-
-        <nav id="site-navigation" class="main-navigation">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'menu-1',
-                    'menu_id'        => 'primary-menu',
-                    'menu_class'     => 'flex space-x-4',
-                )
-            );
-            ?>
-        </nav>
+<header>
+    <div class="logo">
+        <h2>RD Beats</h2>
     </div>
 </header>
-

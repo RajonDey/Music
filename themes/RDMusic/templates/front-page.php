@@ -2,24 +2,30 @@
 /*
 Template Name: Home Screen
 */
-
-// Get the header
 get_header();
 ?>
 
-
-
 <div id="page" class="site">
     <div id="content" class="site-content">
-        <video autoplay muted loop id="myVideo">
-            <source src="<?php echo get_template_directory_uri(); ?>/assets/video/rdmusic-banner.mp4" type="video/mp4">
-        </video>
+        <!-- Background Video -->
+        <?php echo get_template_part( './template-parts/background-video', 'part' ); ?>
+
+
+        <!-- Overlay -->
         <div class="overlay">
-           NEWSLETTER + Blog<br/>
-           Insta/Twitter/Facebook/
-           Soundcloud/
+            <!-- Social Media Links -->
+            <?php echo get_template_part( './template-parts/social-menu', 'part' ); ?>
+
+            <!-- Center Content -->
+            <div class="center-content">
+                <?php echo get_template_part( './template-parts/header-section', 'part' ); ?>
+                <!-- Newsletter Form -->
+                <?php echo get_template_part( './template-parts/newsletter', 'part' ); ?>
+            </div>
+
         </div>
     </div>
+
 </div>
 
 <?php

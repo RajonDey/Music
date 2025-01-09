@@ -1,11 +1,15 @@
 <?php
-/* Home.php */
-get_header();
-?>
+/**
+ * Template for displaying all pages
+ *
+ * @package Rajon Dey Music
+ */
+
+get_header(); ?>
 
 <div id="page" class="site">
     <div id="content" class="site-content">
-        
+
         <!-- Background Video -->
         <?php echo get_template_part( './template-parts/background-video', 'part' ); ?>
 
@@ -18,20 +22,19 @@ get_header();
             <div class="center-content">
                 <?php echo get_template_part( './template-parts/header-section', 'part' ); ?>
                 
-                <!-- Blog Posts Listing -->
-                <div class="blog-posts">
+                <!-- Page Content -->
+                <div class="blog-posts single-post-box">
                     <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post();
+                    if ( have_posts() ) :
+                        while ( have_posts() ) : the_post();
                             ?>
-                            <div class="post-summary">
-                                <h2><a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a></h2>
+                            <div class="post-body">
+                                <?php the_content(); ?>
                             </div>
-                            <?php
-                        endwhile;
+                        <?php endwhile;
                     else :
                         ?>
-                        <p>No posts found.</p>
+                        <p><?php _e( 'Sorry, no content found.' ); ?></p>
                     <?php endif; ?>
                 </div>
 
@@ -39,7 +42,9 @@ get_header();
                 <?php echo get_template_part( './template-parts/newsletter', 'part' ); ?>
             </div>
 
+            
         </div>
+
     </div>
 </div>
 
