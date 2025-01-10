@@ -223,7 +223,9 @@ header {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
 }
-
+iframe.beehiiv-newsletter-form {
+  width: 360px !important;
+}
 /* Newsletter Form */
 .newsletter-form {
   display: flex;
@@ -458,6 +460,7 @@ RESPONSIVE STYLES
   .main-menu a {
     font-size: 14px;
   }
+
   .newsletter-form {
     flex-direction: column;
     gap: 5px;
